@@ -1,31 +1,131 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=ZCOOL+XiaoWei&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+
+* {
+  background-color: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-family: "ZCOOL XiaoWei", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.Appnav{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.Appnav h1 {
+  font-family: "Great Vibes";
+  width: 25vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 100px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.Appnav h1:hover {
+  transform: rotate(3deg);
+  transform: scale(1.4);
+  transform: translate(100px, 0%);
+  color: black;
+  background-color: white;
+  cursor:
+}
+.Appnav hr {
+  height: 2px;
+  background-color: white;
+  margin-top: -70px;
+}
+
+/* this is to style the grid of the letters */
+.grid {
+  margin-top: 120px;
+}
+
+/* this styles the indivisual letter rows */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+}
+
+
+/* this class styles each indivisual letter that we enter in the box */
+.letter {
+  padding: 20px;
+  text-align: center;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  font-size: 20px;
+  width: 50px;
+  margin: 5px;
+  display: grid;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* this is to style the keyboard */
+.keyboard {
+  margin-top: 100px;
+}
+
+/* this class styles the keys of the keyboard */
+.key {
+  background-color: gray;
+  border-color: white;
+  padding: 10px;
+  margin: 10px; 
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  transition: 0.15s ease-in-out;
+}
+
+#bigkeys{
+width: 145px;
+}
+
+.key:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
+.toprow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.midrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bottomrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer {
+  position:absolute;
+  display: transparent;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.footer:hover {
+  color: black;
+  background-color: white;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +134,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
