@@ -3,16 +3,18 @@ import Wordgrid from "./components/Wordgrid";
 import Keyboard from "./components/Keyboard";
 import { defaultState } from "./words";
 import { useState, createContext } from "react";
+import Gameover from "./components/Gameover";
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
   const [board, setBoard] = useState(defaultState);
   const [lpos, setLpos] = useState(0); // the current position of the cursor
   const [aval, setAval] = useState(0); // the current attempt value
-
+  const [gameover, isgameover] =useState(true);
+  const x=1;
   // Here we create functions for enter key, delete key and other alphabets key
   const deleteKey = () => {
-     const newboard = [...board];
+    const newboard = [...board];
     if (lpos >= 0) {
       newboard[aval][lpos] = "";
       setBoard(newboard);
@@ -48,11 +50,23 @@ function App() {
         </nav>
       </div>
       <Appcontext.Provider
-        value={{ board, setBoard, lpos, setLpos, aval, setAval, otherKey, deleteKey, enterKey}}
+        value={{
+          board,
+          setBoard,
+          lpos,
+          setLpos,
+          aval,
+          setAval,
+          otherKey,
+          deleteKey,
+          enterKey,
+          gameover
+        }}
       >
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
         <Wordgrid />
-        <Keyboard />
+        {/* {gameover ?<Keyboard /> : */}
+        <Gameover />
       </Appcontext.Provider>
       {/* <Footer /> */}
     </>

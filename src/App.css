@@ -8,8 +8,7 @@
   font-family: "ZCOOL XiaoWei", sans-serif;
 }
 
-.Appnav{
-
+.Appnav {
 }
 .Appnav h1 {
   font-family: "Great Vibes";
@@ -28,7 +27,7 @@
   transform: translate(100px, 0%);
   color: black;
   background-color: white;
-  cursor:
+  cursor: ;
 }
 .Appnav hr {
   height: 2px;
@@ -48,7 +47,6 @@
   justify-content: center;
   margin: 5px;
 }
-
 
 /* this class styles each indivisual letter that we enter in the box */
 .letter {
@@ -74,7 +72,7 @@
   background-color: gray;
   border-color: white;
   padding: 10px;
-  margin: 10px; 
+  margin: 10px;
   color: black;
   font-weight: bold;
   font-size: 40px;
@@ -86,8 +84,8 @@
   transition: 0.15s ease-in-out;
 }
 
-#bigkeys{
-width: 145px;
+#bigkeys {
+  width: 145px;
 }
 
 .key:hover {
@@ -112,8 +110,29 @@ width: 145px;
   justify-content: center;
 }
 
+.gameover {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.reset {
+  font-size: 30px;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 33px;
+  transition: 0.3s ease-in-out;
+  border: transparent;
+}
+
+.reset:hover{
+  background-color: white; 
+  
+  color: black;
+}
+
 .footer {
-  position:absolute;
+  position: absolute;
   display: transparent;
   bottom: 0;
   width: 100%;
