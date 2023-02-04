@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=ZCOOL+XiaoWei&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+
+* {
+  background-color: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-family: "ZCOOL XiaoWei", sans-serif;
+}
+
+.Appnav h1 {
+  font-family: "Great Vibes";
+  width: 25vh;
+  justify-content: center;
+  font-size: 100px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.Appnav h1:hover {
+  transform: rotate(3deg);
+  transform: scale(1.4);
+  transform: translate(100px, 0%);
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+.Appnav hr {
+  height: 2px;
+  background-color: white;
+  margin-top: -70px;
+}
+
+/* this is to style the grid of the letters */
+.grid {
+  margin-top: 120px;
+}
+
+/* this styles the indivisual letter rows */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+}
+
+/* this class styles each indivisual letter that we enter in the box */
+.letter {
+  padding: 20px;
+  text-align: center;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+  margin: 5px;
+  display: grid;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+/* this is to style the keyboard */
+.keyboard {
+  margin-top: 100px;
+  transition: 2s ease-in-out;
+}
+
+/* this class styles the keys of the keyboard */
+.key {
+  background-color: gray;
+  border-color: white;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  transition: 0.15s ease-in-out;
+}
+
+#bigkeys {
+  width: 145px;
+}
+
+.key:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
+.toprow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.midrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bottomrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* this css will be activated after the enter key is pressed */
+#correctpos{
+  background-color: green;
+}
+#incorrectpos{
+  background-color: yellow;
+  color: black;
+}
+#incorrect{
+  background-color: #333333;     
+  /* #404040  */
+}
+.gameover {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 24px;
+  transition: 0.5s ease-in-out;
+}
+
+
+/* the css for keys */
+
+#notusable{
+  background-color: #404040 ;
+}
+
+#usable{
+  background-color: gray;
+}
+
+
+.reset {
+  font-size: 50px;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 33px;
+  transition: 0.3s ease-in-out;
+  border: transparent;
+  font-weight: bold;
+}
+
+.reset:hover{
+  background-color: white; 
+  
+  color: black;
+}
+
+.footer {
+  position: absolute;
+  display: transparent;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.footer:hover {
+  color: black;
+  background-color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
