@@ -22,7 +22,7 @@ export default function Gameover() {
       {isGameover.win ? (
         <h2>Number of attempts taken: {aval}</h2>
       ) : (
-        <h2>You exhausted all your attempts.</h2>
+        <h2>Try again.</h2>
       )}
 
       <button class="reset" onClick={playagain}>
