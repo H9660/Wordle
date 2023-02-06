@@ -7,6 +7,7 @@ export default function Gameover() {
   const playagain = () => {
     window.location.reload(false);
   };
+  var link="https://www.google.com/search?q=" + correctword.toUpperCase() + "&source=desktop";
   return (
     <div class="gameover">
       {isGameover.win ? (
@@ -15,14 +16,14 @@ export default function Gameover() {
         <h2>
           {" "}
           You couldn't guess the word.<br></br> <br></br>
-          Correct word: {correctword.toUpperCase()}.
+          Correct word: <u><a href={link} target="_blank">{correctword.toUpperCase()}</a></u>
         </h2>
       )}
 
       {isGameover.win ? (
         <h2>Number of attempts taken: {aval}</h2>
       ) : (
-        <h2>Try again.</h2>
+        <h2>{}</h2>
       )}
 
       <button class="reset" onClick={playagain}>

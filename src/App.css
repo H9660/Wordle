@@ -109,7 +109,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
 }
+
 
 /* this css will be activated after the enter key is pressed */
 #correctpos{

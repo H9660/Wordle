@@ -2,11 +2,17 @@ import React, { useContext } from "react";
 import { Appcontext } from "../App";
 // this component will tell us the state of a key i.e its letter
 // whether it is usable or not,color etc.
-function Keys({ keyval, bigkey }) {
-  const { otherKey, enterKey, deleteKey, usable=true} = useContext(Appcontext);
+function Keys({ keyval, bigkey, usable = true }) {
+  const { board, otherKey, enterKey, deleteKey, colorstate, lpos, aval } =
+    useContext(Appcontext);
   function keyaction() {
     // i need to check the keyposition and then if the key is usable or not
-
+    if (
+      board[aval][lpos] === keyval &&
+      colorstate[aval][lpos] === 'incorrect'
+    ) {
+      usable = false;
+    }
     if (keyval == "Delete") {
       deleteKey();
     } else if (keyval == "Enter") {
