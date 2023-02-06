@@ -15,4 +15,6 @@ Then after that when evver the user will press the enter button to go to the nex
 
 create a mp to store the aval and lpos color as symbols 
 
-need to add the feature which allows users to see the meaning of the correct word by clicking on the correct word
+need to add the feature which allows users to see the meaning of the correct word by clicking on the correct wors
+
+need to add the functionality of disables keys

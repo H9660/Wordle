@@ -3,7 +3,7 @@ import Keys from "./Keys";
 import { Appcontext } from "../App";
 
 const Keyboard = () => {
-  const { otherKey, deleteKey, enterKey} = useContext(Appcontext);
+  const { otherKey, deleteKey, enterKey,disabledLetters} = useContext(Appcontext);
   const topkeys = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
   const midkeys = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
   const bottomkeys = ["Z", "X", "C", "V", "B", "N", "M"];
@@ -46,7 +46,6 @@ const Keyboard = () => {
       });
     }
   }
-  
   );
 
   // the useeffect will be used to give input directly from the keyboard.
@@ -66,7 +65,7 @@ const Keyboard = () => {
           {topkeys.map((key) => {
             return (
               <div>
-                <Keys keyval={key} />
+                <Keys keyval={key} usable={!disabledLetters.includes(key)}/>
               </div>
             );
           })}
@@ -76,7 +75,7 @@ const Keyboard = () => {
           {midkeys.map((key) => {
             return (
               <div>
-                <Keys keyval={key} />
+                <Keys keyval={key} usable={!disabledLetters.includes(key)}/>
               </div>
             );
           })}
@@ -84,14 +83,14 @@ const Keyboard = () => {
         {/* the first div is for the bottom row */}
         <div class="bottomrow">
           <div>
-            <Keys id="enterkey" keyval={"Enter"} bigkey={"true"} />
+            <Keys id="enterkey" keyval={"Enter"} bigkey={"true"}  />
           </div>
 
           {bottomkeys.map((key) => {
             return (
               <>
                 <div>
-                  <Keys keyval={key} />
+                  <Keys keyval={key} usable={!disabledLetters.includes(key)}/>
                 </div>
               </>
             );

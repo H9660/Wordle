@@ -13,6 +13,7 @@ function App() {
   const [wordSet, setWordSet] = useState(new Set()); // this is to store the new word generated
   const [correctword, setCorrectWord] = useState("");
   const [currword, setCurrword]=useState("");
+  const [disabledLetters, setDisabledLetters] = useState([]); // this stores the letters that are incorrect
   // const countnos = new Map();
   const newboard = [...board];
   const [countnos, setNos] = useState(new Map());
@@ -67,7 +68,7 @@ function App() {
       setLpos(0);
     }
 
-    // console.log(correctword); for testing purposes
+    // console.log(correctword); //for testing purposes
   };
 
   // this works fine
@@ -114,8 +115,6 @@ function App() {
     // console.log(wordformed);
     // if (wordformed === correctword) isGameover.win = true;
     if (totalcorrectletters == 5) isGameover.win = true;
-    console.log(gameover.win);
-    console.log(gameover.loose);
   };
 
   // we have decalared the board useState so that it can be accessed globally
@@ -138,10 +137,13 @@ function App() {
           otherKey,
           deleteKey,
           enterKey,
+          setDisabledLetters,
+          disabledLetters,
           correctword,
           colorstate,
           setcolors,
           isGameover,
+
         }}
       >
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
