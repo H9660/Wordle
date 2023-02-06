@@ -67,7 +67,7 @@ function App() {
       setLpos(0);
     }
 
-    console.log(correctword);
+    // console.log(correctword); for testing purposes
   };
 
   // this works fine
@@ -113,7 +113,6 @@ function App() {
 
     // console.log(wordformed);
     // if (wordformed === correctword) isGameover.win = true;
-    console.log("sldjfisjd")
     if (totalcorrectletters == 5) isGameover.win = true;
     console.log(gameover.win);
     console.log(gameover.loose);
