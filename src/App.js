@@ -1,6 +1,6 @@
 import "./App.css";
-import Wordgrid from "./components/Wordgrid";
 import Keyboard from "./components/Keyboard";
+import Wordgrid from "./components/Wordgrid";
 import { defaultState, generateWordSet } from "./words";
 import Gameover from "./components/Gameover";
 import { useEffect, useState, createContext } from "react";
@@ -10,11 +10,11 @@ function App() {
   const [board, setBoard] = useState(defaultState);
   const [lpos, setLpos] = useState(0); // the current position of the cursor
   const [aval, setAval] = useState(0); // the current attempt value
-  const [wordSet, setWordSet] = useState(new Set()); // this is to store the new word generated
+  const [wordSet, setWordSet] = useState(new Set()); // this is to store the list of words that can be generated
   const [correctword, setCorrectWord] = useState("");
-  const [currword, setCurrword]=useState("");
   const [disabledLetters, setDisabledLetters] = useState([]); // this stores the letters that are incorrect
   // const countnos = new Map();
+  const [wordformed, setwordformed] = useState("");
   const newboard = [...board];
   const [countnos, setNos] = useState(new Map());
   const [gameover, isGameover] = useState({ win: false, loose: false }); // used to check if the game is over or not
@@ -44,7 +44,6 @@ function App() {
     }
   };
 
-  // the current
   // Here we create functions for enter key, delete key and other alphabets key
 
   const deleteKey = () => {
@@ -58,15 +57,21 @@ function App() {
 
   // this works fine
   const enterKey = () => {
+    
     if (aval == 5 && lpos > 4) {
       setcolors(aval);
       if (!isGameover.win) isGameover.loose = true;
     }
+
     if (lpos > 4) {
-      setcolors(aval);
-      setAval(aval + 1);
-      setLpos(0);
-    }
+      // if (wordSet.has({wordformed})) {
+        setcolors(aval);
+        setAval(aval+1);
+        setLpos(0);
+    // }  else {
+    //   alert("Word not found");
+    // }
+    }    
 
     // console.log(correctword); //for testing purposes
   };
@@ -86,7 +91,7 @@ function App() {
   const setcolors = (aval) => {
     process(); // this function is not working
     let totalcorrectletters = 0; // to store the total correct letters
-    var wordformed = "";
+    setwordformed("");
     for (let i = 0; i < 5; i++) {
       const alphabet = board[aval][i]; // The block corresponsing to this location will get updated
       const correct = correctword[i] === alphabet.toLowerCase();
@@ -95,7 +100,7 @@ function App() {
         countnos.set(correctword[i], countnos.get(correctword[i]) - 1);
         setNos(countnos);
       }
-      wordformed = wordformed + alphabet.toLowerCase();
+     setwordformed(wordformed + alphabet.toLowerCase()) ;
       const almost =
         !correct &&
         alphabet != "" &&
@@ -111,7 +116,7 @@ function App() {
         : "incorrect";
       setColorstate(newcolorstate);
     }
-
+    setwordformed(wordformed);
     // console.log(wordformed);
     // if (wordformed === correctword) isGameover.win = true;
     if (totalcorrectletters == 5) isGameover.win = true;
@@ -123,6 +128,7 @@ function App() {
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
+          {/* <h1>score</h1> */}
           <hr></hr>
         </nav>
       </div>
@@ -154,3 +160,6 @@ function App() {
   );
 }
 export default App;
+
+
+
