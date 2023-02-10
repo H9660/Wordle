@@ -57,7 +57,6 @@ function App() {
 
   // this works fine
   const enterKey = () => {
-    
     if (aval == 5 && lpos > 4) {
       setcolors(aval);
       if (!isGameover.win) isGameover.loose = true;
@@ -65,13 +64,13 @@ function App() {
 
     if (lpos > 4) {
       // if (wordSet.has({wordformed})) {
-        setcolors(aval);
-        setAval(aval+1);
-        setLpos(0);
-    // }  else {
-    //   alert("Word not found");
-    // }
-    }    
+      setcolors(aval);
+      setAval(aval + 1);
+      setLpos(0);
+      // }  else {
+      //   alert("Word not found");
+      // }
+    }
 
     // console.log(correctword); //for testing purposes
   };
@@ -100,7 +99,7 @@ function App() {
         countnos.set(correctword[i], countnos.get(correctword[i]) - 1);
         setNos(countnos);
       }
-     setwordformed(wordformed + alphabet.toLowerCase()) ;
+      setwordformed(wordformed + alphabet.toLowerCase());
       const almost =
         !correct &&
         alphabet != "" &&
@@ -122,13 +121,13 @@ function App() {
     if (totalcorrectletters == 5) isGameover.win = true;
   };
 
+  console.log(gameover);
   // we have decalared the board useState so that it can be accessed globally
   return (
     <>
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
-          {/* <h1>score</h1> */}
           <hr></hr>
         </nav>
       </div>
@@ -149,7 +148,6 @@ function App() {
           colorstate,
           setcolors,
           isGameover,
-
         }}
       >
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
@@ -161,5 +159,4 @@ function App() {
 }
 export default App;
 
-
-
+// const gameover =  document.querySelector(".gameover")

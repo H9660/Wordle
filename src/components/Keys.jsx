@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Appcontext } from "../App";
 // this component will tell us the state of a key i.e its letter
 // whether it is usable or not,color etc.
-function Keys({ keyval, bigkey, usable }) {
+function Keys({ keyval, isdelete, isenter, usable }) {
   const { otherKey, enterKey, deleteKey } =
     useContext(Appcontext);
     
@@ -18,11 +18,10 @@ function Keys({ keyval, bigkey, usable }) {
     }
 
   }
-
   return (
     <div
       className="key"
-      id={bigkey ? "bigkeys" : usable ? "usable" : "notusable" }
+      id={isdelete ? "deletekey" : isenter ? "enterkey" : usable ? "usable" : "notusable" }
       onClick={keyaction}
     >
       {keyval}

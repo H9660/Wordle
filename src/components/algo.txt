@@ -18,3 +18,5 @@ create a mp to store the aval and lpos color as symbols
 need to add the feature which allows users to see the meaning of the correct word by clicking on the correct wors
 
 need to add the functionality of disables keys
+
+here the breakpoint is 593px

@@ -83,7 +83,7 @@ const Keyboard = () => {
         {/* the first div is for the bottom row */}
         <div class="bottomrow">
           <div>
-            <Keys id="enterkey" keyval={"Enter"} bigkey={"true"}  />
+            <Keys keyval={"Enter"} isenter={"true"}  />
           </div>
 
           {bottomkeys.map((key) => {
@@ -97,7 +97,7 @@ const Keyboard = () => {
           })}
 
           <div>
-            <Keys id="deletekey" keyval={"Delete"} bigkey={"true"} />
+            <Keys keyval={"Delete"} isdelete={"true"} />
           </div>
         </div>
       </div>
