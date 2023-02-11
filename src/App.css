@@ -6,7 +6,7 @@
   color: white;
   font-family: "Lato", sans-serif;
   font-family: "ZCOOL XiaoWei", sans-serif;
-  /* animation: spin infinite 20s linear; */
+  transition: 0.3s ease-in-out;
 }
 
 .Appnav h1 {
@@ -63,7 +63,6 @@
 /* this is to style the keyboard */
 .keyboard {
   margin-top: 25px;
-  flex-direction: row;
 }
 
 /* these classes style the keys of the keyboard */
@@ -161,13 +160,15 @@
 }
 
 .footer {
+  font-family: "Great Vibes";
+  font-weight: bold;
   position: absolute;
   display: transparent;
-  bottom: 0;
+  bottom: 0;  
   width: 100%;
-  color: white;
   text-align: center;
-  font-size: 50px;
+  color: white;
+  font-size: 40px;
   transition: 0.3s ease-in-out;
 }
 
@@ -183,12 +184,14 @@ width: 110px;
   width: 110px;
 }
 
-@media (max-width: 593px), (min-width: 2000px) {
+@media  (max-width: 593px) {
   #enterkey{
       transform: translate(180px,51px);
   }
   #deletekey{
        transform: translate(-175px, 51px);
   }
-
+  *{
+    background-color: cyan;
+  }
 }

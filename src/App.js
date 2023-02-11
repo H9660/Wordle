@@ -1,9 +1,11 @@
 import "./App.css";
+import { useEffect, useState, createContext } from "react";
+import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
-import { defaultState, generateWordSet } from "./words";
 import Gameover from "./components/Gameover";
-import { useEffect, useState, createContext } from "react";
+
+
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
@@ -153,6 +155,7 @@ function App() {
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
         <Wordgrid />
         {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
+        
       </Appcontext.Provider>
     </>
   );
