@@ -4,6 +4,7 @@ import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
+import Footer from "./components/Footer";
 
 
 export const Appcontext = createContext(); // this is used to access some of our variables globally
@@ -155,7 +156,6 @@ function App() {
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
         <Wordgrid />
         {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
-        
       </Appcontext.Provider>
     </>
   );
