@@ -131,8 +131,9 @@ function App() {
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
-          <hr></hr>
+         
         </nav>
+         <hr></hr>
       </div>
       <Appcontext.Provider
         value={{
