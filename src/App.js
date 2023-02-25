@@ -4,7 +4,6 @@ import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
-import Footer from "./components/Footer";
 
 
 export const Appcontext = createContext(); // this is used to access some of our variables globally
@@ -35,7 +34,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord(words.todaysWord);
+      setCorrectWord("apple");
     });
   }, []);
   // the process function counts the frequency of each character in the word and stores them in a map

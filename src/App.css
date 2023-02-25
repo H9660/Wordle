@@ -85,18 +85,14 @@
   height: 30px;
   text-align: center;
   align-items: center;
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 #bigkeys {
   width: 100px;
 }
 
-.key:hover {
-  background-color: darkgray;
-  cursor: pointer;
-  flex-direction: row;
-}
+
 .toprow {
   display: flex;
   flex-direction: row;
@@ -162,7 +158,7 @@
 }
 
 .reset:hover {
-  background-color: white;
+  background-color: rgb(230, 255, 255);
   color: black;
 }
 
@@ -192,7 +188,7 @@
 }
 
 #enterkey:hover{
-  background-color: rgb(230, 255, 230);
+  background-color: rgb(230, 255, 255);
 }
 
 #deletekey:hover{
