@@ -1,23 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=ZCOOL+XiaoWei&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Great+Vibes" );
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
 
 * {
   background-color: black;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", "sans-serif";
   font-family: "ZCOOL XiaoWei", sans-serif;
-  /* animation: spin infinite 20s linear; */
 }
 
+.Appnav nav{
+   text-align: center; 
+   justify-content: center;
+   align-items: center; 
+}
 .Appnav h1 {
   font-family: "Great Vibes";
   font-size: 40px;
-  border-radius: 10px;  
+  border-radius: 10px;
   text-align: center;
   transition: 0.3s ease-in-out;
   margin-top: 10px;
-  padding: 0px 10px 0px 10px;  
-  
+  padding: 0px 10px 0px 10px;
 }
 
 .Appnav h1:hover {
@@ -29,16 +32,19 @@
 .Appnav hr {
   height: 1px;
   background-color: white;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 /* this is to style the grid of the letters */
 .grid {
   margin-top: 30px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
 /* this styles the indivisual letter rows */
 .row {
+  /* this is keeping all the rows of the grid straight */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,7 +53,7 @@
 
 /* this class styles each indivisual letter that we enter in the box */
 .letter {
-  padding: 10px 3px;
+  padding: 11px 3px;
   text-align: center;
   border-width: 2px;
   border-color: white;
@@ -56,14 +62,13 @@
   font-weight: bold;
   width: 50px;
   margin: 5px;
-  color: white; 
+  color: white;
   transition: 0.3s ease-in-out;
 }
 
 /* this is to style the keyboard */
 .keyboard {
   margin-top: 25px;
-  flex-direction: row;
 }
 
 /* these classes style the keys of the keyboard */
@@ -80,18 +85,14 @@
   height: 30px;
   text-align: center;
   align-items: center;
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 #bigkeys {
   width: 100px;
 }
 
-.key:hover {
-  background-color: darkgray;
-  cursor: pointer;
-  flex-direction: row;
-}
+
 .toprow {
   display: flex;
   flex-direction: row;
@@ -111,36 +112,37 @@
   justify-content: center;
 }
 
-
 /* this css will be activated after the enter key is pressed */
-#correctpos{
+#correctpos {
   background-color: green;
 }
-#incorrectpos{
+#incorrectpos {
   background-color: yellow;
   color: black;
 }
-#incorrect{
-  background-color: #333333;     
+#incorrect {
+  background-color: #333333;
   /* #404040  */
 }
 .gameover {
   text-align: center;
   margin-top: 30px;
   font-size: 20px;
-  opacity: 1;  
+  opacity: 1;
   transition: 0.4s ease-in-out;
 }
 
-
-
 /* the css for keys when they are disabled/enabled */
-#notusable{
-  background-color: #404040 ;
+#notusable {
+  background-color: #404040;
 }
 
-#usable{
+#usable {
   background-color: gray;
+}
+
+#usable:hover {
+  background-color: white;
 }
 
 
@@ -155,19 +157,21 @@
   font-weight: bold;
 }
 
-.reset:hover{
-  background-color: white; 
+.reset:hover {
+  background-color: rgb(230, 255, 255);
   color: black;
 }
 
 .footer {
+  font-family: "Great Vibes";
+  font-weight: bold;
   position: absolute;
   display: transparent;
   bottom: 0;
   width: 100%;
-  color: white;
   text-align: center;
-  font-size: 50px;
+  color: white;
+  font-size: 40px;
   transition: 0.3s ease-in-out;
 }
 
@@ -176,19 +180,29 @@
   background-color: white;
 }
 
-#enterkey{
-width: 110px;
+#enterkey {
+  width: 110px;
 }
-#deletekey{
+#deletekey {
   width: 110px;
 }
 
-@media (max-width: 593px), (min-width: 2000px) {
-  #enterkey{
-      transform: translate(180px,51px);
+#enterkey:hover{
+  background-color: rgb(230, 255, 255);
+}
+
+#deletekey:hover{
+  background-color: rgb(255, 204, 204);
+}
+
+@media (max-width: 593px) {
+  #enterkey {
+    transform: translate(180px, 51px);
   }
-  #deletekey{
-       transform: translate(-175px, 51px);
+  #deletekey {
+    transform: translate(-175px, 51px);
   }
 
+  * {
+  }
 }

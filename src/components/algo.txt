@@ -20,3 +20,5 @@ need to add the feature which allows users to see the meaning of the correct wor
 need to add the functionality of disables keys
 
 here the breakpoint is 593px
+
+add the arrow keys to change cursor position

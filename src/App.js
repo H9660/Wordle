@@ -1,9 +1,11 @@
 import "./App.css";
+import { useEffect, useState, createContext } from "react";
+import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
-import { defaultState, generateWordSet } from "./words";
 import Gameover from "./components/Gameover";
-import { useEffect, useState, createContext } from "react";
+
+
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord(words.todaysWord);
+      setCorrectWord("apple");
     });
   }, []);
   // the process function counts the frequency of each character in the word and stores them in a map
@@ -128,8 +130,9 @@ function App() {
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
-          <hr></hr>
+         
         </nav>
+         <hr></hr>
       </div>
       <Appcontext.Provider
         value={{
