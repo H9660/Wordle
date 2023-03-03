@@ -22,3 +22,5 @@ need to add the functionality of disables keys
 here the breakpoint is 593px
 
 add the arrow keys to change cursor position
+
+for the keys min 497

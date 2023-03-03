@@ -73,7 +73,7 @@
 
 /* these classes style the keys of the keyboard */
 .key {
-  background-color: gray;
+  background-color: gray; 
   border-color: white;
   padding: 5px;
   margin: 5px;
@@ -202,7 +202,24 @@
   #deletekey {
     transform: translate(-175px, 51px);
   }
+}
 
-  * {
+@media (max-width: 499px) {
+  .key {
+    padding: 1px;
+  }
+  #enterkey {
+    transform: translate(150px, 45px);
+    margin-right: 11px; 
+  }
+  #deletekey {
+    transform: translate(-151px, 45px);
+    margin-left: 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .key {
+    padding: 1px;
   }
 }

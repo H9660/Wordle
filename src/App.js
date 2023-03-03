@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord("apple");
+      setCorrectWord(words.todaysWord);
     });
   }, []);
   // the process function counts the frequency of each character in the word and stores them in a map
