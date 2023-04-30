@@ -113,8 +113,8 @@ function App() {
       newcolorstate[aval][i] = correct
         ? "correctpos"
         : almost
-        ? "incorrectpos"
-        : "incorrect";
+          ? "incorrectpos"
+          : "incorrect";
       setColorstate(newcolorstate);
     }
     setwordformed(wordformed);
@@ -130,9 +130,9 @@ function App() {
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
-         
+
         </nav>
-         <hr></hr>
+        <hr></hr>
       </div>
       <Appcontext.Provider
         value={{

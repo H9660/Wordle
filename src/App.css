@@ -6,13 +6,25 @@
   color: white;
   font-family: "Lato", "sans-serif";
   font-family: "ZCOOL XiaoWei", sans-serif;
+  justify-content: center;
+  /* overflow-y: hidden; */
 }
 
-.Appnav nav{
-   text-align: center; 
-   justify-content: center;
-   align-items: center; 
+.formobile {
+  display: none;
 }
+
+.Appnav {
+  animation: load-anim-main 1s linear;
+  transition: 1s ease-in-out;
+}
+
+.Appnav nav {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .Appnav h1 {
   font-family: "Great Vibes";
   font-size: 40px;
@@ -40,6 +52,7 @@
   margin-top: 30px;
   width: 100%;
   transition: 0.3s ease-in-out;
+  animation: load-anim-grid 2s linear ;
 }
 
 /* this styles the indivisual letter rows */
@@ -69,11 +82,12 @@
 /* this is to style the keyboard */
 .keyboard {
   margin-top: 25px;
+  animation: load-anim-keyboard 3s linear;
 }
 
 /* these classes style the keys of the keyboard */
 .key {
-  background-color: gray; 
+  background-color: gray;
   border-color: white;
   padding: 5px;
   margin: 5px;
@@ -116,14 +130,17 @@
 #correctpos {
   background-color: green;
 }
+
 #incorrectpos {
   background-color: yellow;
   color: black;
 }
+
 #incorrect {
   background-color: #333333;
   /* #404040  */
 }
+
 .gameover {
   text-align: center;
   margin-top: 30px;
@@ -183,15 +200,16 @@
 #enterkey {
   width: 110px;
 }
+
 #deletekey {
   width: 110px;
 }
 
-#enterkey:hover{
+#enterkey:hover {
   background-color: rgb(230, 255, 255);
 }
 
-#deletekey:hover{
+#deletekey:hover {
   background-color: rgb(255, 204, 204);
 }
 
@@ -199,6 +217,7 @@
   #enterkey {
     transform: translate(180px, 51px);
   }
+
   #deletekey {
     transform: translate(-175px, 51px);
   }
@@ -208,18 +227,95 @@
   .key {
     padding: 1px;
   }
+
   #enterkey {
     transform: translate(150px, 45px);
-    margin-right: 11px; 
+    margin-right: 11px;
+    display: block;
   }
+
   #deletekey {
     transform: translate(-151px, 45px);
     margin-left: 7px;
+    display: block;
   }
 }
 
 @media (max-width: 420px) {
-  .key {
-    padding: 1px;
+  #root {
+    display: none;
+  }
+
+  .formobile {
+
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    font-family: "Great Vibes";
+    top: 50vh;
+
+    animation-name: smallsizeanimation;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+  }
+
+}
+
+/* this is for animations */
+@keyframes smallsizeanimation {
+  from {
+    color: black;
+  }
+
+  to {
+    color: white;
+
   }
 }
+
+@keyframes loadinganimation {
+  from {
+    display: none;
+  }
+
+  to {
+    display: block;
+  }
+}
+
+
+@keyframes load-anim-main {
+  from {
+    transform: translateY(1000px);
+    display: none;
+  }
+
+  to {
+    transform: translateY(0px);
+    display: block;
+  }
+}
+
+@keyframes load-anim-grid {
+  from {
+    transform: translateY(3000px);  
+  }
+
+  to {
+    transform: translateY(35.2px);
+  }
+}
+
+@keyframes load-anim-keyboard {
+  from {
+    transform: translateY(5000px);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+}
+
+
+/* this is for the new app */
