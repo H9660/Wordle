@@ -157,7 +157,7 @@ function App() {
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
         <Wordgrid />
         {/* this is the grid */}
-        {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}\
+        {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
         <Footer/>
       </Appcontext.Provider>
     </>
