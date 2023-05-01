@@ -7,6 +7,7 @@ export default function Gameover() {
   const playagain = () => {
     window.location.reload(false);
   };
+  
   var link="https://www.google.com/search?q=" + correctword.toUpperCase() + "&source=desktop";
   return (
     <div class="gameover">

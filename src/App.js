@@ -4,8 +4,7 @@ import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
-
-
+import Footer from "./components/Footer";
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
       setCorrectWord(words.todaysWord);
     });
   }, []);
-  // the process function counts the frequency of each character in the word and stores them in a map
+  // the process function counts the frequency of each character in the word and stores them in a map (under work)
   const process = () => {
     for (let i = 0; i < 5; i++) {
       let oldfreq = countnos.get(correctword[i]);
@@ -85,12 +84,14 @@ function App() {
       setLpos(lpos + 1);
       return;
     }
-    console.log(lpos);
   };
+
+  // APPLE
+  // SJDFH
 
   // here we will set the colors of the letters
   const setcolors = (aval) => {
-    process(); // this function is not working
+    process(); // this function is not working 
     let totalcorrectletters = 0; // to store the total correct letters
     setwordformed("");
     for (let i = 0; i < 5; i++) {
@@ -113,8 +114,8 @@ function App() {
       newcolorstate[aval][i] = correct
         ? "correctpos"
         : almost
-          ? "incorrectpos"
-          : "incorrect";
+        ? "incorrectpos"
+        : "incorrect";
       setColorstate(newcolorstate);
     }
     setwordformed(wordformed);
@@ -130,8 +131,8 @@ function App() {
       <div className="Appnav">
         <nav>
           <h1>Wordle</h1>
-
         </nav>
+        {/* hr is the line that seperates the header and the main content */}
         <hr></hr>
       </div>
       <Appcontext.Provider
@@ -155,7 +156,9 @@ function App() {
       >
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
         <Wordgrid />
-        {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
+        {/* this is the grid */}
+        {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}\
+        <Footer/>
       </Appcontext.Provider>
     </>
   );

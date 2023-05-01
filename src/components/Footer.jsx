@@ -1,8 +1,7 @@
-import React, { PureComponent } from 'react'
 
 function Footer() {
     return (
-      <div className='footer'>Footer</div>
+      <div className='footer'>Developed by Jayho!</div>
     );
 }
 

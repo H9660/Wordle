@@ -208,6 +208,7 @@
   text-align: center;
   color: white;
   font-size: 40px;
+  color: black;
   transition: 0.3s ease-in-out;
 }
 
@@ -216,13 +217,10 @@
   background-color: white;
 }
 
-#enterkey {
+#enterkey, #deletekey {
   width: 110px;
 }
 
-#deletekey {
-  width: 110px;
-}
 
 #enterkey:hover {
   background-color: rgb(230, 255, 255);
