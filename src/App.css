@@ -18,9 +18,11 @@
   /* background-size: 1600px 800px; */
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  
 }
+
 .formobile {
   display: none;
 }
@@ -47,6 +49,7 @@
   padding: 0px 10px 0px 10px;
 }
 
+
 .Appnav h1:hover {
   color: black;
   background-color: white;
@@ -58,6 +61,8 @@
   background-color: white;
   margin-top: -30px;
 }
+/* here we are implementing the select bar */
+
 
 /* this is to style the grid of the letters */
 .grid {
@@ -90,7 +95,6 @@
   margin: 5px;
   color: white;
   transition: 0.3s ease-in-out;
-  /* animation: flip-letter 0.8s linear alternate infinite; */
 }
 
 /* this is to style the keyboard */
@@ -114,6 +118,19 @@
   text-align: center;
   align-items: center;
   transition: 0.2s ease-in-out;
+}
+
+.first-row {
+}
+.second-row {
+}
+.third-row {
+}
+.fourth-row {
+}
+.fifth-row {
+}
+.sixth-row {
 }
 
 #bigkeys {
@@ -163,8 +180,7 @@
   transition: 0.4s ease-in-out;
 }
 
-.gameover h2,
-h2 a {
+.gameover h2,h2 a {
   color: black;
 }
 
@@ -349,6 +365,9 @@ h2 a {
 
   50% {
     transform: scaleY(0);
+    fill-mode: linear;
+    background-color: gray;
+    background-size:cover;
   }
 
   100% {

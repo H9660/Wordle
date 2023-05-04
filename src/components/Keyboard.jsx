@@ -61,7 +61,7 @@ const Keyboard = () => {
     <>
       <div class="keyboard" onKeyDown={handleKeyboard}>
         {/* the first div is for the top row */}
-        <div class="toprow">
+        <div class="toprow" >
           {topkeys.map((key) => {
             return (
               <div>

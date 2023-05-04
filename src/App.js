@@ -5,6 +5,7 @@ import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
 import Footer from "./components/Footer";
+import Themesetter from "./Themesetter";
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
@@ -62,7 +63,47 @@ function App() {
       setcolors(aval);
       if (!isGameover.win) isGameover.loose = true;
     }
+    if (aval == 0) {
+      var elements = document.getElementsByClassName("first-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
 
+    if (aval == 1) {
+      var elements = document.getElementsByClassName("second-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
+
+    if (aval == 2) {
+      var elements = document.getElementsByClassName("third-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
+
+    if (aval == 3) {
+      var elements = document.getElementsByClassName("fourth-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
+
+    if (aval == 4) {
+      var elements = document.getElementsByClassName("fifth-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
+
+    if (aval == 5) {
+      var elements = document.getElementsByClassName("sixth-row");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.animation = "flip-letter 0.8s linear";
+      }
+    }
     if (lpos > 4) {
       // if (wordSet.has({wordformed})) {
       setcolors(aval);
@@ -91,7 +132,7 @@ function App() {
 
   // here we will set the colors of the letters
   const setcolors = (aval) => {
-    process(); // this function is not working 
+    process(); // this function is not working
     let totalcorrectletters = 0; // to store the total correct letters
     setwordformed("");
     for (let i = 0; i < 5; i++) {
@@ -134,6 +175,7 @@ function App() {
         </nav>
         {/* hr is the line that seperates the header and the main content */}
         <hr></hr>
+        <Themesetter />
       </div>
       <Appcontext.Provider
         value={{
@@ -158,7 +200,7 @@ function App() {
         <Wordgrid />
         {/* this is the grid */}
         {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
-        <Footer/>
+        <Footer />
       </Appcontext.Provider>
     </>
   );
