@@ -30,6 +30,7 @@ export default function Gameover() {
       <button class="reset" onClick={playagain}>
         Play Again
       </button>
+      <div className='footer'>Developed by Jayho!</div>
     </div>
   );
 }

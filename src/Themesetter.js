@@ -7,31 +7,28 @@ function Themesetter() {
   var colors = [
     {
       value: 1,
-      label: generateWordSet,
+      label: "cyan",
       name: "General",
-      bgimage,
     },
     {
       value: 2,
-      label: generateAnimalset,
+      label: "green",
       name: "Animals",
     },
     {
       value: 3,
-      label: generateCitiesSet,
+      label: "orange",
       name: "Cities",
     },
   ];
 
-  var [bgimage, setbgimage] = useState(colors.label);
+  var [bgimage, setbgimage] = useState("black");
   var bgimagehandler = (e) => {
     setbgimage(e.label);
   };
   return (
     <div id="selectbutton">
-      <style>
-        {".selectbutton {color: black;}"}
-      </style>
+      <style>{"body {background-color:" + bgimage + " ;}"}</style>
       <center>
         <Select
           options={colors}

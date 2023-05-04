@@ -4,7 +4,6 @@ import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
-import Footer from "./components/Footer";
 import Themesetter from "./Themesetter";
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
@@ -63,48 +62,49 @@ function App() {
       setcolors(aval);
       if (!isGameover.win) isGameover.loose = true;
     }
-    if (aval == 0) {
+    if (aval == 0 && lpos>4) {
       var elements = document.getElementsByClassName("first-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 1) {
+    if (aval == 1 && lpos>4) {
       var elements = document.getElementsByClassName("second-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 2) {
+    if (aval == 2 && lpos>4) {
       var elements = document.getElementsByClassName("third-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 3) {
+    if (aval == 3 && lpos>4) {
       var elements = document.getElementsByClassName("fourth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 4) {
+    if (aval == 4 && lpos>4) {
       var elements = document.getElementsByClassName("fifth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 5) {
+    if (aval == 5 && lpos>4) {
       var elements = document.getElementsByClassName("sixth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
-    if (lpos > 4) {
+
+    if (lpos > 4 && lpos>4) {
       // if (wordSet.has({wordformed})) {
       setcolors(aval);
       setAval(aval + 1);
@@ -200,7 +200,7 @@ function App() {
         <Wordgrid />
         {/* this is the grid */}
         {isGameover.win || isGameover.loose ? <Gameover /> : <Keyboard />}
-        <Footer />
+        {/* <Footer /> */}
       </Appcontext.Provider>
     </>
   );

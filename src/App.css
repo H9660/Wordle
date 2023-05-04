@@ -12,15 +12,14 @@
 }
 
 #body {
-  background: url("./images/wordle_back_4.jpg");
-  /* background-color: black; */
+  /* background: url("./images/wordle_back_4.jpg"); */
+  background-color: black;
   /* object-fit: contain; */
   /* background-size: 1600px 800px; */
   width: 100%;
   height: 100%;
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
-  
 }
 
 .formobile {
@@ -44,11 +43,10 @@
   font-size: 40px;
   border-radius: 10px;
   text-align: center;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   margin-top: 10px;
   padding: 0px 10px 0px 10px;
 }
-
 
 .Appnav h1:hover {
   color: black;
@@ -62,7 +60,6 @@
   margin-top: -30px;
 }
 /* here we are implementing the select bar */
-
 
 /* this is to style the grid of the letters */
 .grid {
@@ -173,15 +170,23 @@
 
 .gameover {
   text-align: center;
-  color: black;
+  color: white;
   margin-top: 30px;
   font-size: 20px;
-  opacity: 1;
+  opacity: 0;
   transition: 0.4s ease-in-out;
+  animation: reveal-gameover 1.5s linear forwards;
 }
 
-.gameover h2,h2 a {
-  color: black;
+.gameover h2,
+h2 a {
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.gameover h2 a:hover {
+  color: cyan;
+  transform: translateX(10px);
 }
 
 /* the css for keys when they are disabled/enabled */
@@ -207,26 +212,26 @@
   transition: 0.3s ease-in-out;
   border: transparent;
   font-weight: bold;
-  animation: play-again 0.7s linear;
+  background-color: black;
+  animation: play-again 1.5s alternate infinite;
 }
 
 .reset:hover {
-  background-color: rgb(184, 232, 103);
-  color: black;
+  color: smokewhite;
 }
 
 .footer {
   font-family: "Great Vibes";
   font-weight: bold;
   position: absolute;
-  display: transparent;
   bottom: 0;
   width: 100%;
   text-align: center;
   color: white;
   font-size: 40px;
   color: white;
-  transition: 0.3s ease-in-out;
+  transition: 3s ease;
+  animation: reveal-gameover 1.5s linear;
 }
 
 .footer:hover {
@@ -304,16 +309,7 @@
     color: white;
   }
 }
-
-@keyframes loadinganimation {
-  from {
-    display: none;
-  }
-
-  to {
-    display: block;
-  }
-}
+/* THIS IS THE ANIMATION SECTION */
 
 @keyframes load-anim-main {
   from {
@@ -347,17 +343,6 @@
   }
 }
 
-@keyframes play-again {
-  from {
-    transform: translateY(2600px);
-  }
-
-  to {
-    transform: translateY(50px);
-  }
-}
-
-/* this css is for the letters fliping */
 @keyframes flip-letter {
   0% {
     transform: scaleY(1);
@@ -367,7 +352,7 @@
     transform: scaleY(0);
     fill-mode: linear;
     background-color: gray;
-    background-size:cover;
+    background-size: cover;
   }
 
   100% {
@@ -375,4 +360,26 @@
   }
 }
 
+@keyframes reveal-gameover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes play-again {
+  from {
+  }
+
+  to {
+    background-color: white;
+  }
+}
+
+
+/* this css is for the letters fliping */
+@keyframes hover-paly{
+  
+}
 /* this is for the new app */
