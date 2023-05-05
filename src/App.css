@@ -280,7 +280,7 @@ h2 a {
   }
 }
 
-@media (max-width: 420px) {
+@media only screen and (orientation: landscape) {
   #root {
     display: none;
   }
@@ -379,7 +379,4 @@ h2 a {
 
 
 /* this css is for the letters fliping */
-@keyframes hover-paly{
-  
-}
 /* this is for the new app */
