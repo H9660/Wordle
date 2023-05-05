@@ -280,7 +280,7 @@ h2 a {
   }
 }
 
-@media only screen and (orientation: landscape) {
+@media (max-width: 420px) {
   #root {
     display: none;
   }
