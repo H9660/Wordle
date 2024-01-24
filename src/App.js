@@ -29,6 +29,11 @@ function App() {
     ["incorrect", "incorrect", "incorrect", "incorrect", "incorrect"],
   ]);
 
+  const changeWordSet = (words) => {
+    setWordSet(words.wordSet);
+    setCorrectWord(words.todaysWord);
+  };
+
   // this function generates a new word everytime the page loads
   useEffect(() => {
     generateWordSet().then((words) => {
@@ -62,49 +67,49 @@ function App() {
       setcolors(aval);
       if (!isGameover.win) isGameover.loose = true;
     }
-    if (aval == 0 && lpos>4) {
+    if (aval == 0 && lpos > 4) {
       var elements = document.getElementsByClassName("first-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 1 && lpos>4) {
+    if (aval == 1 && lpos > 4) {
       var elements = document.getElementsByClassName("second-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 2 && lpos>4) {
+    if (aval == 2 && lpos > 4) {
       var elements = document.getElementsByClassName("third-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 3 && lpos>4) {
+    if (aval == 3 && lpos > 4) {
       var elements = document.getElementsByClassName("fourth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 4 && lpos>4) {
+    if (aval == 4 && lpos > 4) {
       var elements = document.getElementsByClassName("fifth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (aval == 5 && lpos>4) {
+    if (aval == 5 && lpos > 4) {
       var elements = document.getElementsByClassName("sixth-row");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.animation = "flip-letter 0.8s linear";
       }
     }
 
-    if (lpos > 4 && lpos>4) {
+    if (lpos > 4 && lpos > 4) {
       // if (wordSet.has({wordformed})) {
       setcolors(aval);
       setAval(aval + 1);
@@ -175,7 +180,7 @@ function App() {
         </nav>
         {/* hr is the line that seperates the header and the main content */}
         <hr></hr>
-        <Themesetter />
+        <Themesetter changeWordSet={changeWordSet} />
       </div>
       <Appcontext.Provider
         value={{
