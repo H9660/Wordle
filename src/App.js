@@ -4,10 +4,11 @@ import { defaultState, generateWordSet } from "./words";
 import Keyboard from "./components/Keyboard";
 import Wordgrid from "./components/Wordgrid";
 import Gameover from "./components/Gameover";
-import Themesetter from "./Themesetter";
+import Themesetter from "./components/Themesetter";
 export const Appcontext = createContext(); // this is used to access some of our variables globally
 
 function App() {
+  const [currTheme, setcurrTheme] = useState(0);
   const [board, setBoard] = useState(defaultState);
   const [lpos, setLpos] = useState(0); // the current position of the cursor
   const [aval, setAval] = useState(0); // the current attempt value
@@ -199,6 +200,8 @@ function App() {
           colorstate,
           setcolors,
           isGameover,
+          currTheme, 
+          setcurrTheme,
         }}
       >
         {/* using this we can access the usestate anywhere in the wordgrid, keyboard and letter component */}
