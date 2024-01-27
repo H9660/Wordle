@@ -14,7 +14,6 @@ function App() {
   const [wordSet, setWordSet] = useState(new Set()); // this is to store the list of words that can be generated
   const [correctword, setCorrectWord] = useState("");
   const [disabledLetters, setDisabledLetters] = useState([]); // this stores the letters that are incorrect
-  // const countnos = new Map();
   const [wordformed, setwordformed] = useState("");
   const newboard = [...board];
   const [countnos, setNos] = useState(new Map());
@@ -31,22 +30,27 @@ function App() {
 
   const changeWordSet = (words) => {
     setWordSet(words.wordSet);
-    setCorrectWord(words.todaysWord);
+    setCorrectWord(words.todaysWord.toLowerCase());
+    countnos.clear();
+    setNos(countnos);
+    process(words.todaysWord.toLowerCase());
   };
-
   // this function generates a new word everytime the page loads
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
+   
   }, []);
-  // the process function counts the frequency of each character in the word and stores them in a map (under work)
-  const process = () => {
+
+  // the process function counts the frequency of each character in the word and stores them in a map
+  const process = (word) => {
     for (let i = 0; i < 5; i++) {
-      let oldfreq = countnos.get(correctword[i]);
-      countnos.set(correctword[i], oldfreq ? oldfreq + 1 : 1);
+      let oldfreq = countnos.get(word[i]);
+      countnos.set(word[i], oldfreq ? oldfreq + 1 : 1);
       setNos(countnos);
+      console.log(word[i] + " " + countnos.get(word[i]));
     }
   };
 
@@ -58,7 +62,6 @@ function App() {
     setLpos(lpos - 1);
     setBoard(newboard);
     if (lpos < 0) setLpos(0);
-    console.log(lpos);
   };
 
   // this works fine
@@ -134,10 +137,10 @@ function App() {
 
   // APPLE
   // SJDFH
-
+  
   // here we will set the colors of the letters
   const setcolors = (aval) => {
-    process(); // this function is not working
+    process(correctword);
     let totalcorrectletters = 0; // to store the total correct letters
     setwordformed("");
     for (let i = 0; i < 5; i++) {
@@ -160,17 +163,19 @@ function App() {
       newcolorstate[aval][i] = correct
         ? "correctpos"
         : almost
-        ? "incorrectpos"
-        : "incorrect";
+          ? "incorrectpos"
+          : "incorrect";
       setColorstate(newcolorstate);
     }
     setwordformed(wordformed);
+    countnos.clear();
+    setNos(countnos);
     // console.log(wordformed);
     // if (wordformed === correctword) isGameover.win = true;
     if (totalcorrectletters == 5) isGameover.win = true;
   };
 
-  console.log(gameover);
+  // console.log(gameover);
   // we have decalared the board useState so that it can be accessed globally
   return (
     <>
