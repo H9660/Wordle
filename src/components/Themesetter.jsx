@@ -2,10 +2,8 @@ import React from "react";
 import { useState, useContext } from "react";
 import Select from "react-select";
 import { generateAnimalset, generateCitiesSet, generateWordSet } from "../words";
-// import { Appcontext } from "../App";
 
 export default function Themesetter(props) {
-  // const { setcurrTheme } = useContext(Appcontext); // this is not working
   var themes = {
     Animals: {
       color: "#8A9A5B",
@@ -41,16 +39,10 @@ export default function Themesetter(props) {
   
   var [bgimage, setbgimage] = useState("black");
   var bgimagehandler = async (e) => {
-    
     var theme = themes[e.label];
     setbgimage(theme.color);
     var newWordSet = await theme.getWordSet();
     props.changeWordSet(newWordSet);
-    // if (bgimage === "#8A9A5B")
-    //   setcurrTheme(1);
-    // else if (bgimage === "#36454F")
-    //   setcurrTheme(2);
-    // else setcurrTheme(3);
   };
   return (
     <>

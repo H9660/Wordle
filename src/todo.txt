@@ -1,2 +1,0 @@
-i need to prevent page scrolling
-- I have added a sceen for low resolution devices
