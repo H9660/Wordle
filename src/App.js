@@ -40,8 +40,11 @@ function App() {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
+      countnos.clear();
+      setNos(countnos);
+      process(words.todaysWord);
     });
-   
+    
   }, []);
 
   // the process function counts the frequency of each character in the word and stores them in a map
@@ -140,7 +143,7 @@ function App() {
   
   // here we will set the colors of the letters
   const setcolors = (aval) => {
-    process(correctword);
+    const tempfreqs = new Map([...countnos]);
     let totalcorrectletters = 0; // to store the total correct letters
     setwordformed("");
     for (let i = 0; i < 5; i++) {
@@ -148,7 +151,7 @@ function App() {
       const correct = correctword[i] === alphabet.toLowerCase();
       if (correct) {
         totalcorrectletters++;
-        countnos.set(correctword[i], countnos.get(correctword[i]) - 1);
+        tempfreqs.set(correctword[i], tempfreqs.get(correctword[i]) - 1);
         setNos(countnos);
       }
       setwordformed(wordformed + alphabet.toLowerCase());
@@ -156,7 +159,7 @@ function App() {
         !correct &&
         alphabet != "" &&
         correctword.includes(alphabet.toLowerCase()) &&
-        countnos.get(alphabet.toLowerCase()) != 0;
+        tempfreqs.get(alphabet.toLowerCase()) != 0;
       // here for it to be almost correct it cant be correct and it cant be empty as well
       // also it should be present in the correctword
       const newcolorstate = [...colorstate];
@@ -168,8 +171,8 @@ function App() {
       setColorstate(newcolorstate);
     }
     setwordformed(wordformed);
-    countnos.clear();
-    setNos(countnos);
+    // countnos.clear();
+    // setNos(countnos);
     // console.log(wordformed);
     // if (wordformed === correctword) isGameover.win = true;
     if (totalcorrectletters == 5) isGameover.win = true;
