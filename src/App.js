@@ -53,7 +53,6 @@ function App() {
       let oldfreq = countnos.get(word[i]);
       countnos.set(word[i], oldfreq ? oldfreq + 1 : 1);
       setNos(countnos);
-      console.log(word[i] + " " + countnos.get(word[i]));
     }
   };
 
@@ -116,16 +115,10 @@ function App() {
     }
 
     if (lpos > 4 && lpos > 4) {
-      // if (wordSet.has({wordformed})) {
       setcolors(aval);
       setAval(aval + 1);
       setLpos(0);
-      // }  else {
-      //   alert("Word not found");
-      // }
     }
-
-    // console.log(correctword); //for testing purposes
   };
 
   // this works fine
@@ -137,9 +130,6 @@ function App() {
       return;
     }
   };
-
-  // APPLE
-  // SJDFH
   
   // here we will set the colors of the letters
   const setcolors = (aval) => {
@@ -171,14 +161,9 @@ function App() {
       setColorstate(newcolorstate);
     }
     setwordformed(wordformed);
-    // countnos.clear();
-    // setNos(countnos);
-    // console.log(wordformed);
-    // if (wordformed === correctword) isGameover.win = true;
     if (totalcorrectletters == 5) isGameover.win = true;
   };
 
-  // console.log(gameover);
   // we have decalared the board useState so that it can be accessed globally
   return (
     <>
@@ -186,7 +171,6 @@ function App() {
         <nav>
           <h1>Wordle</h1>
         </nav>
-        {/* hr is the line that seperates the header and the main content */}
         <hr></hr>
         <Themesetter changeWordSet={changeWordSet} />
       </div>
@@ -220,4 +204,3 @@ function App() {
 }
 export default App;
 
-// const gameover =  document.querySelector(".gameover")
